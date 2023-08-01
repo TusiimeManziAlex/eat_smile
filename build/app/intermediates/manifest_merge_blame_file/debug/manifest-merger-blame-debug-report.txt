@@ -1,0 +1,336 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.nutrition_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="33" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\android\app\src\debug\AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+16-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-77
+16-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-74
+17    <uses-permission android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
+17-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-89
+17-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-86
+18    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+18-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+18-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
+19    <uses-permission android:name="android.permission.VIBRATE" />
+19-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-66
+19-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-63
+20    <uses-permission
+20-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:10:5-12:38
+21        android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+21-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:11:9-77
+22        android:maxSdkVersion="22" />
+22-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:12:9-35
+23
+24    <permission
+24-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\186f3cf0b847de5e7dd40510ff39a719\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+25        android:name="com.example.nutrition_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\186f3cf0b847de5e7dd40510ff39a719\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\186f3cf0b847de5e7dd40510ff39a719\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.example.nutrition_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- for android -->
+28-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\186f3cf0b847de5e7dd40510ff39a719\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\186f3cf0b847de5e7dd40510ff39a719\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+29    <!-- <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/> -->
+30    <!-- <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/> -->
+31    <!-- <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> -->
+32    <!-- <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" /> -->
+33    <!-- for Samsung -->
+34    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+34-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:19:5-86
+34-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:19:22-83
+35    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- for htc -->
+35-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:20:5-87
+35-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:20:22-84
+36    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:23:5-81
+36-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:23:22-78
+37    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- for sony -->
+37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:24:5-83
+37-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:24:22-80
+38    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:27:5-88
+38-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:27:22-85
+39    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- for apex -->
+39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:28:5-92
+39-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:28:22-89
+40    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- for solid -->
+40-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:31:5-84
+40-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:31:22-81
+41    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- for huawei -->
+41-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:34:5-83
+41-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:34:22-80
+42    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+42-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:37:5-91
+42-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:37:22-88
+43    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+43-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:38:5-92
+43-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:38:22-89
+44    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- for ZUK -->
+44-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:39:5-93
+44-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:39:22-90
+45    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- for OPPO -->
+45-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:42:5-73
+45-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:42:22-70
+46    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+46-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:45:5-82
+46-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:45:22-79
+47    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- for EvMe -->
+47-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:46:5-83
+47-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:46:22-80
+48    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+48-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:49:5-88
+48-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:49:22-85
+49    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+49-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:50:5-89
+49-->[me.leolin:ShortcutBadger:1.1.22] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\267e64b81432cbd4cf958aca5f227e3b\transformed\jetified-ShortcutBadger-1.1.22\AndroidManifest.xml:50:22-86
+50
+51    <application
+52        android:name="android.app.Application"
+53        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+53-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\186f3cf0b847de5e7dd40510ff39a719\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+54        android:debuggable="true"
+55        android:icon="@mipmap/ic_launcher"
+56        android:label="nutrition_app" >
+57        <activity
+58            android:name="com.example.nutrition_app.MainActivity"
+59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60            android:exported="true"
+61            android:hardwareAccelerated="true"
+62            android:launchMode="singleTop"
+63            android:theme="@style/LaunchTheme"
+64            android:windowSoftInputMode="adjustResize" >
+65
+66            <!--
+67                 Specifies an Android theme to apply to this Activity as soon as
+68                 the Android process has started. This theme is visible to the user
+69                 while the Flutter UI initializes. After that, this theme continues
+70                 to determine the Window background behind the Flutter UI.
+71            -->
+72            <meta-data
+73                android:name="io.flutter.embedding.android.NormalTheme"
+74                android:resource="@style/NormalTheme" />
+75
+76            <intent-filter>
+77                <action android:name="android.intent.action.MAIN" />
+78
+79                <category android:name="android.intent.category.LAUNCHER" />
+80            </intent-filter>
+81        </activity>
+82        <!--
+83             Don't delete the meta-data below.
+84             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+85        -->
+86        <meta-data
+87            android:name="flutterEmbedding"
+88            android:value="2" />
+89
+90        <provider
+90-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+91            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+91-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+92            android:authorities="com.example.nutrition_app.flutter.image_provider"
+92-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+93            android:exported="false"
+93-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+94            android:grantUriPermissions="true" >
+94-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+95            <meta-data
+95-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+96                android:name="android.support.FILE_PROVIDER_PATHS"
+96-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+97                android:resource="@xml/flutter_image_picker_file_paths" />
+97-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+98        </provider>
+99
+100        <receiver
+100-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:9-17:39
+101            android:name="me.carda.awesome_notifications.DartNotificationActionReceiver"
+101-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-89
+102            android:exported="true" />
+102-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-36
+103        <receiver
+103-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:9-20:39
+104            android:name="me.carda.awesome_notifications.DartDismissedNotificationReceiver"
+104-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-92
+105            android:exported="true" />
+105-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-36
+106        <receiver
+106-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:9-23:39
+107            android:name="me.carda.awesome_notifications.DartScheduledNotificationReceiver"
+107-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:13-92
+108            android:exported="true" />
+108-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-36
+109        <receiver
+109-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:9-38:20
+110            android:name="me.carda.awesome_notifications.DartRefreshSchedulesReceiver"
+110-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-87
+111            android:enabled="true"
+111-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-35
+112            android:exported="true" >
+112-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-36
+113            <intent-filter>
+113-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:13-37:29
+114                <category android:name="android.intent.category.DEFAULT" />
+114-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-76
+114-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:27-73
+115
+116                <action android:name="android.intent.action.BOOT_COMPLETED" />
+116-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:31:17-79
+116-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:31:25-76
+117                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
+117-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:32:17-86
+117-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:32:25-83
+118                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+118-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:33:17-84
+118-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:33:25-81
+119                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+119-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:34:17-82
+119-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:34:25-79
+120                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+120-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:35:17-82
+120-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:35:25-79
+121                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+121-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:36:17-107
+121-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:36:25-104
+122            </intent-filter>
+123        </receiver>
+124
+125        <service
+125-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:40:9-43:72
+126            android:name="me.carda.awesome_notifications.DartBackgroundService"
+126-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:41:13-80
+127            android:exported="false"
+127-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:42:13-37
+128            android:permission="android.permission.BIND_JOB_SERVICE" />
+128-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:43:13-69
+129        <service
+129-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:44:9-49:43
+130            android:name="me.carda.awesome_notifications.core.services.ForegroundService"
+130-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:45:13-90
+131            android:enabled="true"
+131-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:46:13-35
+132            android:exported="false"
+132-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:47:13-37
+133            android:foregroundServiceType="phoneCall"
+133-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:48:13-54
+134            android:stopWithTask="true" />
+134-->[:awesome_notifications] C:\Users\TUSIIME MANZI ALEX\Desktop\Acolyte\flutter-nutrition-app-main\nutrition_app\build\awesome_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:49:13-40
+135        <service
+135-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:21:9-28:19
+136            android:name="me.carda.awesome_notifications.core.managers.StatusBarManager"
+136-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:22:13-89
+137            android:exported="true"
+137-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:23:13-36
+138            android:label="My Notification Listener Service" >
+138-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:24:13-61
+139            <intent-filter>
+139-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:25:13-27:29
+140                <action android:name="android.service.notification.NotificationListenerService" />
+140-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:26:17-99
+140-->[me.carda:AndroidAwnCore:0.7.5-dev.3] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\029e1c0cd9540ec4f1976934e5f3e496\transformed\jetified-AndroidAwnCore-0.7.5-dev.3\AndroidManifest.xml:26:25-96
+141            </intent-filter>
+142        </service>
+143        <service
+143-->[androidx.room:room-runtime:2.5.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\da33ba9b284b9061845e24773d3eb60d\transformed\room-runtime-2.5.0\AndroidManifest.xml:24:9-28:63
+144            android:name="androidx.room.MultiInstanceInvalidationService"
+144-->[androidx.room:room-runtime:2.5.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\da33ba9b284b9061845e24773d3eb60d\transformed\room-runtime-2.5.0\AndroidManifest.xml:25:13-74
+145            android:directBootAware="true"
+145-->[androidx.room:room-runtime:2.5.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\da33ba9b284b9061845e24773d3eb60d\transformed\room-runtime-2.5.0\AndroidManifest.xml:26:13-43
+146            android:exported="false" />
+146-->[androidx.room:room-runtime:2.5.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\da33ba9b284b9061845e24773d3eb60d\transformed\room-runtime-2.5.0\AndroidManifest.xml:27:13-37
+147
+148        <uses-library
+148-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\289dbc00909ce6513708fd612063726d\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+149            android:name="androidx.window.extensions"
+149-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\289dbc00909ce6513708fd612063726d\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+150            android:required="false" />
+150-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\289dbc00909ce6513708fd612063726d\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+151        <uses-library
+151-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\289dbc00909ce6513708fd612063726d\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+152            android:name="androidx.window.sidecar"
+152-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\289dbc00909ce6513708fd612063726d\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+153            android:required="false" />
+153-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\289dbc00909ce6513708fd612063726d\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+154
+155        <provider
+155-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+156            android:name="androidx.startup.InitializationProvider"
+156-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+157            android:authorities="com.example.nutrition_app.androidx-startup"
+157-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+158            android:exported="false" >
+158-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+159            <meta-data
+159-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+160                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+160-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+161                android:value="androidx.startup" />
+161-->[androidx.emoji2:emoji2:1.2.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\42e4f88bf0e7df0694865cc3ce2332de\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+162            <meta-data
+162-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\4bb962196aefd03dfc107c3c4fd5b308\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+163                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+163-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\4bb962196aefd03dfc107c3c4fd5b308\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+164                android:value="androidx.startup" />
+164-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\4bb962196aefd03dfc107c3c4fd5b308\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+165            <meta-data
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+166                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+166-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+167                android:value="androidx.startup" />
+167-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+168        </provider>
+169
+170        <receiver
+170-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+171            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+171-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+172            android:directBootAware="false"
+172-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+173            android:enabled="true"
+173-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+174            android:exported="true"
+174-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+175            android:permission="android.permission.DUMP" >
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+176            <intent-filter>
+176-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+177                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+178            </intent-filter>
+179            <intent-filter>
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+180                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+181            </intent-filter>
+182            <intent-filter>
+182-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+183                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+184            </intent-filter>
+185            <intent-filter>
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+186                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\ae22b4bc678de8f4f56768e53c294706\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+187            </intent-filter>
+188        </receiver>
+189    </application>
+190
+191</manifest>
