@@ -1,10 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nutrition_app/models/meal/meal.dart';
 import 'package:nutrition_app/models/meal_type/meal_type.dart';
 import 'package:nutrition_app/models/water/water.dart';
 import 'package:nutrition_app/providers/preferences.dart';
-import 'package:nutrition_app/screens/main_screen.dart';
+import 'package:nutrition_app/screens/login_page.dart';
+// import 'package:nutrition_app/screens/main_screen.dart';
 import 'package:nutrition_app/theme/theme_constants.dart';
 import 'package:nutrition_app/theme/theme_manager.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +14,7 @@ import 'models/food/food.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); //initilization of Firebase app
 
   await Hive.initFlutter();
 
@@ -53,7 +56,7 @@ class _MyAppState extends State<MyApp> {
                   theme: lightTheme,
                   darkTheme: darkTheme,
                   themeMode: context.watch<ThemeManager>().themeMode,
-                  home: const MainScreen(),
+                  home: const SignInScreen(),
                 )
               : const LoadingScreen();
         });

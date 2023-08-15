@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\bac\\flutter-nutrition-app-main\\nutrition_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\1944c41779c86b2562b01accf2594107\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\4c3a2dac83c0b264df8c9ed06770b55a\\transformed\\core-1.10.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

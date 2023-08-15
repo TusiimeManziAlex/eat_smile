@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">289972669991-g07q3om58t5rq082gjn9beut5385rj5n.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">289972669991</string>
+    <string name="google_api_key" translatable="false">AIzaSyB2AR6apkr75JTOnHWhgnrVfAyT3s588QU</string>
+    <string name="google_app_id" translatable="false">1:289972669991:android:3bcd3b07c84c8d9c058802</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB2AR6apkr75JTOnHWhgnrVfAyT3s588QU</string>
+    <string name="google_storage_bucket" translatable="false">eatsmile-9375d.appspot.com</string>
+    <string name="project_id" translatable="false">eatsmile-9375d</string>
+</resources>

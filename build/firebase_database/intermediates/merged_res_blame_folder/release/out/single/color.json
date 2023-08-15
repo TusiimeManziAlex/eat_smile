@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\firebase_database\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_tint.xml",
+        "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\bf3c4fa48c6ad90c0dfa608fa0d1bf40\\transformed\\jetified-play-services-base-18.1.0\\res\\color\\common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\firebase_database\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\bf3c4fa48c6ad90c0dfa608fa0d1bf40\\transformed\\jetified-play-services-base-18.1.0\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\firebase_database\\intermediates\\res\\merged\\release\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\bf3c4fa48c6ad90c0dfa608fa0d1bf40\\transformed\\jetified-play-services-base-18.1.0\\res\\color\\common_google_signin_btn_text_light.xml"
+    }
+]

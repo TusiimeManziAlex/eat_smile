@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289972669991",
+    "project_id": "eatsmile-9375d",
+    "storage_bucket": "eatsmile-9375d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289972669991:android:3bcd3b07c84c8d9c058802",
+        "android_client_info": {
+          "package_name": "com.example.nutrition_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289972669991-g07q3om58t5rq082gjn9beut5385rj5n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2AR6apkr75JTOnHWhgnrVfAyT3s588QU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289972669991-g07q3om58t5rq082gjn9beut5385rj5n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

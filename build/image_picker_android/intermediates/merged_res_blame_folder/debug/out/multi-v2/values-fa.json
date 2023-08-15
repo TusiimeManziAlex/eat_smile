@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\bac\\flutter-nutrition-app-main\\nutrition_app\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\values-fa\\values-fa.xml",
+            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\image_picker_android\\intermediates\\res\\merged\\debug\\values-fa\\values-fa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\1944c41779c86b2562b01accf2594107\\transformed\\core-1.10.1\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\4c3a2dac83c0b264df8c9ed06770b55a\\transformed\\core-1.10.1\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -16,10 +16,10 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\bac\\flutter-nutrition-app-main\\nutrition_app\\build\\image_picker_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
+            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\image_picker_android\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\1944c41779c86b2562b01accf2594107\\transformed\\core-1.10.1\\res\\values-fa\\values-fa.xml",
+                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\4c3a2dac83c0b264df8c9ed06770b55a\\transformed\\core-1.10.1\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -28,9 +28,7 @@ class _DetailScreenState extends State<DetailScreen> {
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var decodedResponse = convert.jsonDecode(response.body);
-      print('===================$decodedResponse');
       foodData = FoodData.fromMap(decodedResponse);
-      print('===================$foodData');
       setState(() {
         loading = false;
       });
@@ -44,18 +42,19 @@ class _DetailScreenState extends State<DetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: loading
-            ? SizedBox.shrink()
+            ? const SizedBox.shrink()
             : FittedBox(
                 child: Text(
                   "${foodData.description}",
-                  style: TextStyle(fontSize: 28),
+                  style: const TextStyle(fontSize: 18),
                 ),
               ),
       ),
       body: Container(
         child: loading
-            ? Center(child: CircularProgressIndicator())
+            ? const Center(child: CircularProgressIndicator())
             : Column(
                 children: [
                   const Text(

@@ -1,10 +1,12 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nutrition_app/pages/darsh.dart';
 import 'package:nutrition_app/screens/history.dart';
 import 'package:nutrition_app/screens/home_screen.dart';
+import 'package:nutrition_app/screens/login_page.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class MainScreen extends StatefulWidget {
@@ -128,6 +130,7 @@ class _MainScreenState extends State<MainScreen> {
           IconButton(
             icon: const Icon(Icons.account_circle),
             onPressed: () {
+              _showProfileLogoutDialog(context);
               // Implement user profile navigation here.
             },
           ),
@@ -169,4 +172,39 @@ class _MainScreenState extends State<MainScreen> {
           : _subScreens[_index],
     );
   }
+
+  void _showProfileLogoutDialog(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text("Profile Options"),
+        content: const Text("Choose an option:"),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context); // Close the dialog
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => UserProfileScreen()),
+              // );
+            },
+            child: const Text("Go to Profile"),
+          ),
+          TextButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut().then((value) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SignInScreen()));
+              });
+            },
+            child: const Text("Logout"),
+          ),
+        ],
+      );
+    },
+  );
+}
 }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\bac\\flutter-nutrition-app-main\\nutrition_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\bac\\flutter-nutrition-app-main\\nutrition_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

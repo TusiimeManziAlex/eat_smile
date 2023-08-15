@@ -1,10 +1,15 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_format/date_format.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:nutrition_app/db/Boxes.dart';
 import 'package:nutrition_app/models/meal/meal.dart';
 import 'package:nutrition_app/models/water/water.dart';
 import 'package:nutrition_app/pages/detailScreen.dart';
+import 'package:nutrition_app/screens/main_screen.dart';
 import 'package:tflite/tflite.dart';
 import 'package:nutrition_app/providers/preferences.dart';
 import 'package:nutrition_app/widgets/info_row.dart';
@@ -21,14 +26,20 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeState extends State<HomeScreen> {
   final ImagePicker _picker = ImagePicker();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  bool isLoading = false;
   File? _image;
   List? _result;
+
+  String _userName = '';
+  String _userID = '';
 
   String fruitName = '';
 
   @override
   void initState() {
     super.initState();
+    getData();
     loadModelData().then((value) {
       setState(() {});
     });
@@ -43,6 +54,20 @@ class _HomeState extends State<HomeScreen> {
   void dispose() {
     Tflite.close();
     super.dispose();
+  }
+
+  // get the user data
+  void getData() async {
+    final User? user = _auth.currentUser;
+    // ignore: no_leading_underscores_for_local_identifiers
+    final _uid = user?.uid;
+
+    final DocumentSnapshot userDoc =
+        await FirebaseFirestore.instance.collection("users").doc(_uid).get();
+    setState(() {
+      _userName = userDoc.get("lastName");
+      _userID = _uid!;
+    });
   }
 
   // From camera
@@ -139,9 +164,10 @@ class _HomeState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Consumer<Preferences>(
-                    builder: ((context, value, child) => Text("Welcome back,",
-                        // ignore: deprecated_member_use
-                        style: Theme.of(context).textTheme.headline1)),
+                    builder: ((context, value, child) =>
+                        Text("Welcome back, $_userName",
+                            // ignore: deprecated_member_use
+                            style: Theme.of(context).textTheme.headline1)),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
@@ -273,10 +299,36 @@ class _HomeState extends State<HomeScreen> {
                             elevation: 4,
                             primary: const Color(0xFF49A329),
                           ),
-                          onPressed: detectFruit,
-                          child: const Text(
-                            'Analyze Fruit',
-                          ),
+                          onPressed: () {
+                            setState(() {
+                              isLoading = true;
+                            });
+                            detectFruit();
+                            Future.delayed(const Duration(seconds: 3), () {
+                              isLoading = false;
+                            });
+                          },
+                          child: isLoading
+                              ? const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+
+                                  // ignore: prefer_const_literals_to_create_immutables
+                                  children: [
+                                    Text(
+                                      'Loading...',
+                                      style: TextStyle(fontSize: 20),
+                                    ),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    CircularProgressIndicator(
+                                      color: Colors.white,
+                                    ),
+                                  ],
+                                )
+                              : const Text(
+                                  'Analyze Fruit',
+                                ),
                         ),
                       ),
                     ],
@@ -305,147 +357,751 @@ class _HomeState extends State<HomeScreen> {
         });
 
         if (fruitName == "apple") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102644),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102644),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "banana") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102653),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102653),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "blackberry") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102700),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102700),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "blueberry") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102702),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102702),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "gauva") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102666),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102666),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "grapes") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102665),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102665),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Error'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "mango") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102670),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102670),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "orange") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102597),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102597),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "papaya") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102674),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102674),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "passion") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102676),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102676),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "pineapple") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102688),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102688),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "tomato") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1103280),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1103280),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "watermelon") {
-          // ignore: use_build_context_synchronously
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => DetailScreen(1102698),
-            ),
-          );
+          // Create the history entry
+          final DateTime now = DateTime.now();
+          final String date = DateFormat('MMM d, yyyy | EEEEEE').format(now);
+          final String time = DateFormat.jm().format(now);
+          String title = fruitName;
+
+          // Get a reference to the "recentHistories" node in the Realtime Database
+          final DatabaseReference recentHistoriesRef = FirebaseDatabase.instance
+              .ref()
+              .child('recentHistory')
+              .child(_userID);
+
+          // Generate a unique key for the new history entry
+          final DatabaseReference newHistoryRef = recentHistoriesRef.push();
+          final String? historyId = newHistoryRef.key;
+
+          try {
+            // Set the values of the fields for the new history entry
+            await newHistoryRef.set({
+              'activityId': historyId,
+              'date': date,
+              'time': time,
+              'title': title,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailScreen(1102698),
+              ),
+            );
+          } catch (error) {
+            // Handle any errors that may occur during the database update
+            // ignore: use_build_context_synchronously
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: const Text('Transfer Failed'),
+                  content: const Text(
+                      'There was an error while keeping records. Please try again.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Text('OK'),
+                    ),
+                  ],
+                );
+              },
+            );
+          }
         } else if (fruitName == "not recognized") {
           // ignore: use_build_context_synchronously
           showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text("Error!"),
-            content: const Text("The fruit image is not recognized!"),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop(); // Close the dialog
-                },
-                child: const Text("OK"),
-              ),
-            ],
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text("Error!"),
+                content: const Text("The fruit image is not recognized!"),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      // ignore: use_build_context_synchronously
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const MainScreen())); // Close the dialog
+                    },
+                    child: const Text("OK"),
+                  ),
+                ],
+              );
+            },
           );
-        },
-      );
         } else {
           // ignore: use_build_context_synchronously
           showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text("Error!"),
-            content: const Text("Unknown error happen while loading the model."),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop(); // Close the dialog
-                },
-                child: const Text("OK"),
-              ),
-            ],
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text("Error!"),
+                content:
+                    const Text("Unknown error happen while loading the model."),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Close the dialog
+                    },
+                    child: const Text("OK"),
+                  ),
+                ],
+              );
+            },
           );
-        },
-      );
         }
       } catch (e) {
         showDialog(

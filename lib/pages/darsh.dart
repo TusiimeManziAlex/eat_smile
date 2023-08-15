@@ -28,7 +28,7 @@ class _DarshBoardScreenState extends State<DarshBoardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fruit List'),
+        title: const Text('Fruits List',style: TextStyle(fontSize: 12)),
       ),
       body: ListView.builder(
         itemCount: _foodList.length,
