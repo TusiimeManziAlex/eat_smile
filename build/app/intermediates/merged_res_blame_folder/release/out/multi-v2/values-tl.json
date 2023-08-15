@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\TUSIIME MANZI ALEX\\Desktop\\bac\\flutter-nutrition-app-main\\nutrition_app\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-tl\\values-tl.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\95d8f8a29e3b716e54e47cbe23efb997\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-tl\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "140",
+                        "endOffsets": "335"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "789",
+                        "endColumns": "144",
+                        "endOffsets": "929"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\TUSIIME MANZI ALEX\\.gradle\\caches\\transforms-3\\1944c41779c86b2562b01accf2594107\\transformed\\core-1.10.1\\res\\values-tl\\values-tl.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,152,254,355,452,559,667,789",
+                        "endColumns": "96,101,100,96,106,107,121,100",
+                        "endOffsets": "147,249,350,447,554,662,784,885"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,152,254,355,452,559,667,934",
+                        "endColumns": "96,101,100,96,106,107,121,100",
+                        "endOffsets": "147,249,350,447,554,662,784,1030"
+                    }
+                }
+            ]
+        }
+    ]
+}

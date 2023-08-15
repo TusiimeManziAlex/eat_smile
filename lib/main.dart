@@ -82,7 +82,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.white,
@@ -91,9 +91,10 @@ class _LoadingScreenState extends State<LoadingScreen> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircularProgressIndicator(color: Colors.green),
-              SizedBox(height: 20),
-              Text('Getting magic ready...'),
+              Image.asset("assets/icons/nutrition_icon.png"),
+              const CircularProgressIndicator(color: Colors.green),
+              const SizedBox(height: 20),
+              const Text('Nutrition App Loading...',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),),
             ],
           )
         ),

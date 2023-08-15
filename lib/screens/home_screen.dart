@@ -4,6 +4,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:nutrition_app/db/Boxes.dart';
 import 'package:nutrition_app/models/meal/meal.dart';
 import 'package:nutrition_app/models/water/water.dart';
+import 'package:nutrition_app/pages/detailScreen.dart';
+import 'package:tflite/tflite.dart';
 import 'package:nutrition_app/providers/preferences.dart';
 import 'package:nutrition_app/widgets/info_row.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +23,27 @@ class _HomeState extends State<HomeScreen> {
   final ImagePicker _picker = ImagePicker();
   File? _image;
   List? _result;
+
+  String fruitName = '';
+
+  @override
+  void initState() {
+    super.initState();
+    loadModelData().then((value) {
+      setState(() {});
+    });
+  }
+
+  loadModelData() async {
+    await Tflite.loadModel(
+        model: 'assets/model_unquant.tflite', labels: 'assets/labels.txt');
+  }
+
+  @override
+  void dispose() {
+    Tflite.close();
+    super.dispose();
+  }
 
   // From camera
   takeImage() async {
@@ -123,7 +146,7 @@ class _HomeState extends State<HomeScreen> {
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
                     child: Text(
-                      "Eat the right amount of food and stay hydrated through the day",
+                      "Eat the right amount of fruits and stay hydrated through the day",
                       style: Theme.of(context)
                           .textTheme
                           // ignore: deprecated_member_use
@@ -134,9 +157,11 @@ class _HomeState extends State<HomeScreen> {
                   const SizedBox(height: 30),
                   const Center(
                     child: Text(
-                      'Capture Your Meal',
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.orangeAccent),
+                      'Capture Your Fruit',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orangeAccent),
                     ),
                   ),
                   Padding(
@@ -149,7 +174,7 @@ class _HomeState extends State<HomeScreen> {
                               takeImage();
                             },
                             child: InfoRow(
-                              "Upload Meal Image",
+                              "Upload Fruit Image",
                               "From Camera",
                               "assets/icons/nutrition_icon.png",
                               Colors.green,
@@ -167,7 +192,7 @@ class _HomeState extends State<HomeScreen> {
                           pickGalleryImage();
                         },
                         child: InfoRow(
-                          "Upload Meal Image",
+                          "Upload Fruit Image",
                           "From Gallery",
                           "assets/icons/nutrition_icon.png",
                           Colors.blue,
@@ -179,15 +204,15 @@ class _HomeState extends State<HomeScreen> {
                 ],
               ),
       ),
-      floatingActionButton: FloatingActionButton.extended(onPressed: () {
-        setState(() {
-          _image = null;
-        });
-
-      },
-      foregroundColor: Colors.white,
-      label: const Text("Reflesh"),
-      icon: const  Icon(Icons.refresh) ,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          setState(() {
+            _image = null;
+          });
+        },
+        foregroundColor: Colors.white,
+        label: const Text("Reflesh"),
+        icon: const Icon(Icons.refresh),
       ),
       // floatingActionButton: const SpeedDial(
       //   backgroundColor: Colors.green,
@@ -233,27 +258,27 @@ class _HomeState extends State<HomeScreen> {
                       const SizedBox(
                         height: 20,
                       ),
-                      _result != null
-                          ? Text(
-                              'This banknote is ${_result![0]['label']}.',
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold),
-                            )
-                          : Padding(
-                              padding: const EdgeInsets.only(top: 30.0),
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 60),
-                                  elevation: 4,
-                                  primary: const Color(0xFF49A329),
-                                ),
-                                onPressed: () {},
-                                child: const Text(
-                                  'Analyze Meal',
-                                ),
-                              ),
-                            ),
+                      // _result != null
+                      //     ? Text(
+                      //         'This fruit is ${_result![0]['label']}.',
+                      //         style:
+                      //             const TextStyle(fontWeight: FontWeight.bold),
+                      //       )
+                      //     :
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(horizontal: 60),
+                            elevation: 4,
+                            primary: const Color(0xFF49A329),
+                          ),
+                          onPressed: detectFruit,
+                          child: const Text(
+                            'Analyze Fruit',
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -263,5 +288,204 @@ class _HomeState extends State<HomeScreen> {
         ),
       ),
     );
+  }
+
+  void detectFruit() async {
+    if (_image != null) {
+      try {
+        _result = await Tflite.runModelOnImage(
+          path: _image!.path,
+          numResults: 2,
+          threshold: 0.6,
+          imageMean: 127.5,
+          imageStd: 127.5,
+        );
+        setState(() {
+          fruitName = _result![0]['label'];
+        });
+
+        if (fruitName == "apple") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102644),
+            ),
+          );
+        } else if (fruitName == "banana") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102653),
+            ),
+          );
+        } else if (fruitName == "blackberry") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102700),
+            ),
+          );
+        } else if (fruitName == "blueberry") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102702),
+            ),
+          );
+        } else if (fruitName == "gauva") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102666),
+            ),
+          );
+        } else if (fruitName == "grapes") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102665),
+            ),
+          );
+        } else if (fruitName == "mango") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102670),
+            ),
+          );
+        } else if (fruitName == "orange") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102597),
+            ),
+          );
+        } else if (fruitName == "papaya") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102674),
+            ),
+          );
+        } else if (fruitName == "passion") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102676),
+            ),
+          );
+        } else if (fruitName == "pineapple") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102688),
+            ),
+          );
+        } else if (fruitName == "tomato") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1103280),
+            ),
+          );
+        } else if (fruitName == "watermelon") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailScreen(1102698),
+            ),
+          );
+        } else if (fruitName == "not recognized") {
+          // ignore: use_build_context_synchronously
+          showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Error!"),
+            content: const Text("The fruit image is not recognized!"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+        } else {
+          // ignore: use_build_context_synchronously
+          showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("Error!"),
+            content: const Text("Unknown error happen while loading the model."),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+        }
+      } catch (e) {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text("No image"),
+              content: Text(e.toString()),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(); // Close the dialog
+                  },
+                  child: const Text("OK"),
+                ),
+              ],
+            );
+          },
+        );
+      }
+
+      setState(() {});
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text("No image"),
+            content: const Text("Please input the fruit image !"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // Close the dialog
+                },
+                child: const Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 }

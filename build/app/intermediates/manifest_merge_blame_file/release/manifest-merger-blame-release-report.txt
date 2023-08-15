@@ -1,0 +1,257 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.nutrition_app"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml
+10    <!-- Required permission for App measurement to run. -->
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:23:5-67
+11-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:23:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:24:5-79
+12-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:24:22-76
+13    <uses-permission android:name="android.permission.WAKE_LOCK" />
+13-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:25:5-68
+13-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:25:22-65
+14    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+14-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:26:5-110
+14-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:26:22-107
+15    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+15-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:25:5-79
+15-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:25:22-76
+16
+17    <permission
+17-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1944c41779c86b2562b01accf2594107\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+18        android:name="com.example.nutrition_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1944c41779c86b2562b01accf2594107\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1944c41779c86b2562b01accf2594107\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.example.nutrition_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1944c41779c86b2562b01accf2594107\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1944c41779c86b2562b01accf2594107\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+22
+23    <application
+24        android:name="android.app.Application"
+24-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:5:9-42
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.10.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1944c41779c86b2562b01accf2594107\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+26        android:icon="@mipmap/ic_launcher"
+26-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:6:9-43
+27        android:label="nutrition_app" >
+27-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:4:9-38
+28        <activity
+28-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:7:9-27:20
+29            android:name="com.example.nutrition_app.MainActivity"
+29-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:8:13-41
+30            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+30-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:12:13-163
+31            android:exported="true"
+31-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:9:13-36
+32            android:hardwareAccelerated="true"
+32-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:13:13-47
+33            android:launchMode="singleTop"
+33-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:10:13-43
+34            android:theme="@style/LaunchTheme"
+34-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:11:13-47
+35            android:windowSoftInputMode="adjustResize" >
+35-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:14:13-55
+36
+37            <!--
+38                 Specifies an Android theme to apply to this Activity as soon as
+39                 the Android process has started. This theme is visible to the user
+40                 while the Flutter UI initializes. After that, this theme continues
+41                 to determine the Window background behind the Flutter UI.
+42            -->
+43            <meta-data
+43-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:19:13-22:17
+44                android:name="io.flutter.embedding.android.NormalTheme"
+44-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:20:15-70
+45                android:resource="@style/NormalTheme" />
+45-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:21:15-52
+46
+47            <intent-filter>
+47-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:23:13-26:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:24:17-68
+48-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:24:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:25:17-76
+50-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:25:27-74
+51            </intent-filter>
+52        </activity>
+53        <!--
+54             Don't delete the meta-data below.
+55             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+56        -->
+57        <meta-data
+57-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:30:9-32:33
+58            android:name="flutterEmbedding"
+58-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:31:13-44
+59            android:value="2" />
+59-->C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\android\app\src\main\AndroidManifest.xml:32:13-30
+60
+61        <provider
+61-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:8:9-16:20
+62            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+62-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:9:13-82
+63            android:authorities="com.example.nutrition_app.flutter.image_provider"
+63-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:10:13-74
+64            android:exported="false"
+64-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:11:13-37
+65            android:grantUriPermissions="true" >
+65-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:12:13-47
+66            <meta-data
+66-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:13:13-15:75
+67                android:name="android.support.FILE_PROVIDER_PATHS"
+67-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:14:17-67
+68                android:resource="@xml/flutter_image_picker_file_paths" />
+68-->[:image_picker_android] C:\Users\TUSIIME MANZI ALEX\Desktop\bac\flutter-nutrition-app-main\nutrition_app\build\image_picker_android\intermediates\merged_manifest\release\AndroidManifest.xml:15:17-72
+69        </provider>
+70
+71        <receiver
+71-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:29:9-33:20
+72            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+72-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:30:13-85
+73            android:enabled="true"
+73-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:31:13-35
+74            android:exported="false" >
+74-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:32:13-37
+75        </receiver>
+76
+77        <service
+77-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:35:9-38:40
+78            android:name="com.google.android.gms.measurement.AppMeasurementService"
+78-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:36:13-84
+79            android:enabled="true"
+79-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:37:13-35
+80            android:exported="false" />
+80-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:38:13-37
+81        <service
+81-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:39:9-43:72
+82            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+82-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:40:13-87
+83            android:enabled="true"
+83-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:41:13-35
+84            android:exported="false"
+84-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:42:13-37
+85            android:permission="android.permission.BIND_JOB_SERVICE" />
+85-->[com.google.android.gms:play-services-measurement:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\fb1c8cf360b6296c59eb5f78592ce2e1\transformed\jetified-play-services-measurement-21.1.0\AndroidManifest.xml:43:13-69
+86        <service
+86-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:28:9-34:19
+87            android:name="com.google.firebase.components.ComponentDiscoveryService"
+87-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:29:13-84
+88            android:directBootAware="true"
+88-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:35:13-43
+89            android:exported="false" >
+89-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:30:13-37
+90            <meta-data
+90-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:31:13-33:85
+91                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+91-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:32:17-139
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.android.gms:play-services-measurement-api:21.1.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\9af4c20ac13a39b01a034df0f17bd1c4\transformed\jetified-play-services-measurement-api-21.1.0\AndroidManifest.xml:33:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\5c28db202c4349662cc174cc399ccc6d\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:18:13-20:85
+94                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+94-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\5c28db202c4349662cc174cc399ccc6d\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:19:17-127
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-installations:17.0.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\5c28db202c4349662cc174cc399ccc6d\transformed\jetified-firebase-installations-17.0.1\AndroidManifest.xml:20:17-82
+96        </service>
+97
+98        <provider
+98-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:26:9-31:39
+99            android:name="com.google.firebase.provider.FirebaseInitProvider"
+99-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:27:13-77
+100            android:authorities="com.example.nutrition_app.firebaseinitprovider"
+100-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:28:13-72
+101            android:directBootAware="true"
+101-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:29:13-43
+102            android:exported="false"
+102-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:30:13-37
+103            android:initOrder="100" />
+103-->[com.google.firebase:firebase-common:20.1.1] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\2a524aff64e9d5286e73f9d22086fad2\transformed\jetified-firebase-common-20.1.1\AndroidManifest.xml:31:13-36
+104
+105        <meta-data
+105-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\95d8f8a29e3b716e54e47cbe23efb997\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+106            android:name="com.google.android.gms.version"
+106-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\95d8f8a29e3b716e54e47cbe23efb997\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+107            android:value="@integer/google_play_services_version" />
+107-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\95d8f8a29e3b716e54e47cbe23efb997\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+108
+109        <uses-library
+109-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\b1b07feaf7fd9c306262a040a64a9e28\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+110            android:name="androidx.window.extensions"
+110-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\b1b07feaf7fd9c306262a040a64a9e28\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+111            android:required="false" />
+111-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\b1b07feaf7fd9c306262a040a64a9e28\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+112        <uses-library
+112-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\b1b07feaf7fd9c306262a040a64a9e28\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+113            android:name="androidx.window.sidecar"
+113-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\b1b07feaf7fd9c306262a040a64a9e28\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+114            android:required="false" />
+114-->[androidx.window:window:1.0.0-beta04] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\b1b07feaf7fd9c306262a040a64a9e28\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+115
+116        <provider
+116-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+117            android:name="androidx.startup.InitializationProvider"
+117-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
+118            android:authorities="com.example.nutrition_app.androidx-startup"
+118-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
+119            android:exported="false" >
+119-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37
+120            <meta-data
+120-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+121                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+121-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+122                android:value="androidx.startup" />
+122-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+123        </provider>
+124
+125        <receiver
+125-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+126            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+126-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+127            android:directBootAware="false"
+127-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+128            android:enabled="true"
+128-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+129            android:exported="true"
+129-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+130            android:permission="android.permission.DUMP" >
+130-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+131            <intent-filter>
+131-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+132                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+132-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+133            </intent-filter>
+134            <intent-filter>
+134-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+135                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+135-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+136            </intent-filter>
+137            <intent-filter>
+137-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+138                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+138-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+139            </intent-filter>
+140            <intent-filter>
+140-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+141                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+141-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\0c2266893d1a9797423c86010704c0e0\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+142            </intent-filter>
+143        </receiver>
+144    </application>
+145
+146</manifest>
