@@ -67,6 +67,7 @@ class _SignInScreenState extends State<SignInScreen> {
     );
     // password field
     final passwordField = TextFormField(
+      keyboardType: TextInputType.number,
       cursorColor: Colors.purple,
       autofocus: false,
       controller: passwordController,
@@ -91,7 +92,7 @@ class _SignInScreenState extends State<SignInScreen> {
               BorderSide(width: 1, color: Colors.purple),
         ),
       ),
-      keyboardType: TextInputType.number,
+      // keyboardType: TextInputType.number,
       maxLength: 6,
       validator: (value) {
         if (value == null || value.trim().isEmpty) {

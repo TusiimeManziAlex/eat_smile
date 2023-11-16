@@ -119,11 +119,12 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Diet Nutrition App ", style: TextStyle(color: Colors.white))
+            Text("Diabetic Fruit Diet App", style: TextStyle(color: Colors.white))
           ],
         ),
         actions: [

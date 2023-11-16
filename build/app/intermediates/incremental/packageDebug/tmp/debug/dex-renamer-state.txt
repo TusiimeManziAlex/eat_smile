@@ -1,4 +1,4 @@
-#Tue Aug 15 11:39:15 EAT 2023
+#Sun Oct 22 12:32:53 EAT 2023
 base.2=C\:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes3.dex
 path.2=classes3.dex
 base.1=C\:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes2.dex

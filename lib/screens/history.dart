@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:nutrition_app/models/models.dart';
+import 'package:nutrition_app/screens/tips.dart';
+import 'package:nutrition_app/screens/user_infor.dart';
 
 class HistoryScreen extends StatefulWidget {
   const HistoryScreen({super.key});
@@ -29,17 +31,26 @@ class _HistoryScreenState extends State<HistoryScreen> {
       _userID = _uid!;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Your History", style: TextStyle(fontSize: 12),),
+        title: const Text(
+          "Your History",
+          style: TextStyle(fontSize: 12),
+        ),
         actions: [
           PopupMenuButton<String>(
             onSelected: (value) {
               if (value == 'delete') {
                 // Perform delete action here
                 removeActivityFromDatabase(); // Pass the activity ID to the remove function
+              } else if (value == "content") {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ContentScreen()));
               }
             },
             itemBuilder: (BuildContext context) => [
@@ -47,13 +58,17 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 value: 'delete',
                 child: Text('Delete history'),
               ),
+              const PopupMenuItem<String>(
+                value: 'content',
+                child: Text('About Diabetes'),
+              ),
             ],
           ),
         ],
       ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height:  MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height,
           child: StreamBuilder<DatabaseEvent>(
             stream: FirebaseDatabase.instance
                 .ref()
@@ -65,11 +80,11 @@ class _HistoryScreenState extends State<HistoryScreen> {
               if (snapshot.hasError) {
                 return Text('Error: ${snapshot.error}');
               }
-          
+
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
               }
-          
+
               if (!snapshot.hasData || snapshot.data?.snapshot.value == null) {
                 return const Center(
                   child: Text(
@@ -82,10 +97,10 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   ),
                 );
               }
-          
+
               DatabaseEvent databaseEvent = snapshot.data!;
               dynamic data = databaseEvent.snapshot.value;
-          
+
               // Convert the data into a list of activity objects
               List<Activity> activities = [];
               if (data != null) {
@@ -94,25 +109,24 @@ class _HistoryScreenState extends State<HistoryScreen> {
                   String activityId = value['activityId'];
                   String time = value['time'];
                   String title = value['title'];
-  
-          
+
                   Activity activity = Activity(
-                      date: date,
-                      activityId: activityId,
-                      time: time,
-                      title: title,
-                      );
+                    date: date,
+                    activityId: activityId,
+                    time: time,
+                    title: title,
+                  );
                   activities.add(activity);
                 });
                 // Sort activities in descending order based on date
                 activities.sort((a, b) => b.date.compareTo(a.date));
               }
-          
+
               return ListView.builder(
                 itemCount: activities.length,
                 itemBuilder: (BuildContext context, int index) {
                   Activity activity = activities[index];
-          
+
                   return Card(
                     color: Colors.white,
                     margin: const EdgeInsets.all(1),
@@ -123,9 +137,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                         height: 55.0,
                         child: InkWell(
                           splashColor: const Color(0xFF00BFA5),
-                          onTap: () {
-                            
-                          },
+                          onTap: () {},
                           child: SingleChildScrollView(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -174,14 +186,25 @@ class _HistoryScreenState extends State<HistoryScreen> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const UserDataScreen()));
+        },
+        foregroundColor: Colors.white,
+        label: const Text("Recommendation"),
+      ),
+      // floatingActionButton: const SpeedDial(
+      //   backgroundColor: Colors.green,
+      //   foregroundColor: Colors.white,
+      //   icon: Icons.water_drop_rounded,
+      // ),
     );
   }
 
   void removeActivityFromDatabase() {
-    final DatabaseReference activityRef = FirebaseDatabase.instance
-        .ref()
-        .child('recentHistory')
-        .child(_userID);
+    final DatabaseReference activityRef =
+        FirebaseDatabase.instance.ref().child('recentHistory').child(_userID);
     activityRef.remove();
   }
 }

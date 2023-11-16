@@ -943,30 +943,30 @@ library {
   maven_library {
     groupId: "org.tensorflow"
     artifactId: "tensorflow-lite"
-    version: "2.13.0"
+    version: "2.14.0"
   }
   digests {
-    sha256: "\254\324\242\366\334gbF\000C\003G\361\317\331p\261\030\f%x\214b\212\243\037a\326S\303\323\217"
+    sha256: "p\235\270\037\277\272F\033\036\322~\234\036\203\201|-|\306\004i\aN\2526\310\217\270\333\352H\206"
   }
 }
 library {
   maven_library {
     groupId: "org.tensorflow"
     artifactId: "tensorflow-lite-api"
-    version: "2.13.0"
+    version: "2.14.0"
   }
   digests {
-    sha256: "\026\0344\341\301\210f\261\214\2437\337\351#V\304W\016\315\025^Z\n\001B$|\235V\027\243\202"
+    sha256: "\035\037\377\376\235\025\226\230\202\310V$\2320\030\314\322\031\223\031\341\225\246;{Xi\237\310\313\203o"
   }
 }
 library {
   maven_library {
     groupId: "org.tensorflow"
     artifactId: "tensorflow-lite-gpu"
-    version: "2.13.0"
+    version: "2.14.0"
   }
   digests {
-    sha256: "E\303\210Z\242\307*|\213\233\360|\310\2316*\306L \251\356\\H\337\3709\351\351\006\275\301["
+    sha256: "\300C\221C\345N\323\374\023\235\304\225$\237\304\251D\330\203\247\'\374E\005\223\265w\372\224e\210\\"
   }
 }
 library {
@@ -1028,7 +1028,7 @@ library {
 }
 library {
   digests {
-    sha256: "Bb\241F\t|\025\352\2323\222\3221 \373<\215\035\277\021\005\276\314Q\321-\304I\242\215\026b"
+    sha256: "\263\233\2659,\304[d\313H\340\333\373r8\357`~m\350\203H4h?T3\276\312\321\270v"
   }
 }
 library_dependencies {

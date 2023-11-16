@@ -607,7 +607,7 @@
 -keep public class androidx.versionedparcelable.ParcelImpl
 
 # End of content from C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\c1e1003a350551e817b389e9aa374f6f\transformed\versionedparcelable-1.1.1\proguard.txt
-# The proguard configuration file for the following section is C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\6abbb9b66f15414db6805fd1d847a512\transformed\jetified-tensorflow-lite-2.13.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1317bede5715defcd7d714eb98bd4f81\transformed\jetified-tensorflow-lite-2.14.0\proguard.txt
 -keep class org.tensorflow.lite.annotations.UsedByReflection
 -keep @org.tensorflow.lite.annotations.UsedByReflection class *
 -keepclassmembers class * {
@@ -615,7 +615,7 @@
 }
 
 
-# End of content from C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\6abbb9b66f15414db6805fd1d847a512\transformed\jetified-tensorflow-lite-2.13.0\proguard.txt
+# End of content from C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\1317bede5715defcd7d714eb98bd4f81\transformed\jetified-tensorflow-lite-2.14.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\80e3ea974e55abeb4d24710e3d7a202a\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
 -keep,allowobfuscation @interface androidx.annotation.Keep
 -keep @androidx.annotation.Keep class * {*;}
@@ -637,7 +637,7 @@
 }
 
 # End of content from C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\80e3ea974e55abeb4d24710e3d7a202a\transformed\rules\lib\META-INF\proguard\androidx-annotations.pro
-# The proguard configuration file for the following section is C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\8e80099185a669d3824e5adfc104ea8e\transformed\jetified-tensorflow-lite-api-2.13.0\proguard.txt
+# The proguard configuration file for the following section is C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\51751145ba50ca0552d2b7a555f351ef\transformed\jetified-tensorflow-lite-api-2.14.0\proguard.txt
 -keep class org.tensorflow.lite.annotations.UsedByReflection
 -keep @org.tensorflow.lite.annotations.UsedByReflection class *
 -keepclassmembers class * {
@@ -645,7 +645,7 @@
 }
 
 
-# End of content from C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\8e80099185a669d3824e5adfc104ea8e\transformed\jetified-tensorflow-lite-api-2.13.0\proguard.txt
+# End of content from C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\51751145ba50ca0552d2b7a555f351ef\transformed\jetified-tensorflow-lite-api-2.14.0\proguard.txt
 # The proguard configuration file for the following section is C:\Users\TUSIIME MANZI ALEX\.gradle\caches\transforms-3\7dff4852926e34ab39d84f1ccca67af8\transformed\jetified-protolite-well-known-types-18.0.0\proguard.txt
 # Add project specific ProGuard rules here.
 # You can control the set of applied configuration files using the

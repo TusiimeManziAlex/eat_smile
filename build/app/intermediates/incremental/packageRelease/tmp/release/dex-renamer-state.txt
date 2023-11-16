@@ -1,4 +1,4 @@
-#Tue Aug 15 11:51:28 EAT 2023
+#Tue Oct 03 20:38:38 EAT 2023
 base.0=C\:\\Users\\TUSIIME MANZI ALEX\\Desktop\\Acolyte\\nutrition_app\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
